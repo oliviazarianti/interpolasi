@@ -1,0 +1,19 @@
+import numpy as np
+from scipy.interpolate import lagrange
+
+x = np.array([20.0, 50.0, 80.0], dtype=float)
+y = np.array([45.0, 80.0, 95.0], dtype=float)
+
+poly_lagrange = lagrange(x,y)
+
+x_target = 60.0
+y_pred = poly_lagrange(x_target)
+
+print("="*50)
+print("IMPLEMENTASI INTERPOLASI (LAGRANGE POLINOMIAL)")
+print("="*50)
+
+
+print(f"Nilai data x :{x_target} %")
+print(f"Nilai data y :{y_pred:.2f} Mbps")
+print(f"\nEstimasi nilai troughput saat bandwidth sebesar {x_target} % adalah {y_pred:.2f} Mbps")
